@@ -4,11 +4,11 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    byebug
     @category = Category.new(category_params)
+
     if @category.save
       flash[:success] = "#{@category.title} added!"
-      redirect_to category_path(@category)
+      redirect_to @category
     else
       render :new
     end
