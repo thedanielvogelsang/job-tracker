@@ -2,3 +2,9 @@
 
 <%= link_to "<< Back to Index", categories_path %>
 <!-- where we'll put jobs -->
+<br/>
+<ul>
+<% @category.jobs.each do |job| %>
+<h4><li>job.title</li></h4>
+<% end %>
+</ul>
