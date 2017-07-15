@@ -5,6 +5,6 @@
 <br/>
 <ul>
 <% @category.jobs.each do |job| %>
-<h4><li>job.title</li></h4>
+<h4><li><%=job.title%> -- <%= job.company.name %></li></h4>
 <% end %>
 </ul>
