@@ -11,7 +11,7 @@ describe "User creates a new job" do
     fill_in "job[level_of_interest]", with: 80
     fill_in "job[city]", with: "Denver"
 
-    select("CorporateHegemon = A", :from => 'job[category]')
+    select("#{category.title}", :from => 'job[category]')
 
     click_button "Create"
 
