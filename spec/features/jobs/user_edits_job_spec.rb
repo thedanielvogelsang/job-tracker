@@ -14,7 +14,7 @@ RSpec.feature "User visits a job show page and clicks edit" do
 
 
     click_on("Edit")
-
+    save_and_open_page
 
     expect(find_field("job_title").value).to eq 'Clean Toilets-4'
     fill_in "job_title", with: new_job.title

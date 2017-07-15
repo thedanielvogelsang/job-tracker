@@ -8,5 +8,6 @@ FactoryGirl.define do
     city "Denver"
 
     association :company
+    association :category
   end
 end
