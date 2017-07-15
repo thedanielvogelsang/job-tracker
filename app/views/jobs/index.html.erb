@@ -2,8 +2,8 @@ All Jobs for <strong><%= @company.name %></strong>
 <%= link_to "Create New Job", new_company_job_path(@company) %>
 <ul class="jobs">
 <% @jobs.each do |job| %>
-  <li class="job_title"><%= job.title %> at <%= job.company.name %></li>
-  <%= link_to "Edit", edit_company_job_path(@company, job) %><br /></br>
-  <%= link_to "delete", company_job_path(@company, job), method: :delete, data: {confirm: "Really delete the article?"} %>
+  <li class="job_title"><%= link_to job.title, company_job_path(job.company, job) %> at <%= job.company.name %></li>
+  <%= link_to "Edit", edit_company_job_path(@company, job) %>
+  <%= link_to "delete", company_job_path(@company, job), method: :delete, data: {confirm: "Really delete the article?"} %><br /></br>
 <% end %>
 </ul>

@@ -14,4 +14,12 @@ Level of Interest: <%= @job.level_of_interest %>
 City: <%= @job.city %>
 <br>
 
-Company: <%= link_to @job.company.name, company_path(@job.company) %>
+Company: <%= link_to @job.company.name, company_path(@job.company) %><br><br>
+
+<%= render partial: "comment_form" %>
+
+<h2> Comments </h2> <br>
+
+<% @job.comments.each do |comment| %>
+<h4><%= comment.content %></h4><br><br>
+<% end %>
