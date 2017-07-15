@@ -12,9 +12,7 @@ RSpec.feature "User visits a job show page and clicks edit" do
     expect(job.level_of_interest).to eq(48)
     expect(job.city).to eq("Denver")
 
-
     click_on("Edit")
-    save_and_open_page
 
     expect(find_field("job_title").value).to eq 'Clean Toilets-4'
     fill_in "job_title", with: new_job.title
