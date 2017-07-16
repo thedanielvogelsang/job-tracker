@@ -1,4 +1,4 @@
-<%= form_for [@company, @job, @job.comments.build] do |f| %>
+<%= form_for [@job, @job.comments.build] do |f| %>
 <%= f.label :comment_content %>
 <%= f.text_field :content %>
 

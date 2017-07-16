@@ -8,13 +8,13 @@ RSpec.feature "User visits a job show page and clicks edit" do
 
     visit company_jobs_path(job.company)
 
-    expect(job.title).to eq("Clean Toilets-4")
+    expect(job.title).to eq("Clean Toilets-7")
     expect(job.level_of_interest).to eq(48)
     expect(job.city).to eq("Denver")
 
-    click_on("Edit")
+    click_on("edit")
 
-    expect(find_field("job_title").value).to eq 'Clean Toilets-4'
+    expect(find_field("job_title").value).to eq 'Clean Toilets-7'
     fill_in "job_title", with: new_job.title
     fill_in "job_level_of_interest", with: new_job.level_of_interest
 

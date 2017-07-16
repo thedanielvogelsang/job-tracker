@@ -14,12 +14,20 @@ Level of Interest: <%= @job.level_of_interest %>
 City: <%= @job.city %>
 <br>
 
-Company: <%= link_to @job.company.name, company_path(@job.company) %><br><br>
+Company: <%= link_to @company.name, company_path(@company) %><br><br>
 
 <%= render partial: "comment_form" %>
 
 <h2> Comments </h2> <br>
 
-<% @job.comments.each do |comment| %>
-<h4><%= comment.content %></h4><br><br>
-<% end %>
+<ol>
+<% if @job.comments %>
+  <% @job.comments.each do |comment| %>
+    <h4><li> -- <%= comment.content %></li></h4>
+      <ul>
+        <li id="delete"><%= link_to "delete", url_for([@job, comment]), method: :delete %></li>
+      </ul>
+  <% end %>
+<% else %>
+  <% end %>
+</ol>

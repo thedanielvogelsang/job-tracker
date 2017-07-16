@@ -5,8 +5,8 @@ RSpec.feature "User deletes existing job" do
     job = create(:job)
     job2 = create(:job, :company_id => job.company.id)
     job3 = create(:job, :company_id => job.company.id)
-    jobtitle = "Clean Toilets-1"
-    job2title = "Clean Toilets-2"
+    jobtitle = "Clean Toilets-4"
+    job2title = "Clean Toilets-5"
     visit company_jobs_path(job.company)
     
     expect(first("//li").text).to have_text(jobtitle)

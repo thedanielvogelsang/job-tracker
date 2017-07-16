@@ -12,4 +12,13 @@ feature "User adds comment to job" do
 
     expect(page).to have_content("lots of comments here")
   end
+
+  scenario "and clicks 'Create Comment' without entering anything" do
+    company = create(:company)
+    job = create(:job, company: company)
+
+    visit company_job_path(company, job)
+    click_on "Create Comment"
+    expect(page).to have_content("No content to add to Comments")
+  end
 end
