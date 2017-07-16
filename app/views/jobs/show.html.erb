@@ -21,8 +21,8 @@ Company: <%= link_to @company.name, company_path(@company) %><br><br>
 <h2> Comments </h2> <br>
 
 <ol>
-<% if @job.comments %>
-  <% @job.comments.each do |comment| %>
+<% if @comments.count >= 1 %>
+  <% @comments.each do |comment| %>
     <h4><li> -- <%= comment.content %></li></h4>
       <ul>
         <li id="delete"><%= link_to "delete", url_for([@job, comment]), method: :delete %></li>
