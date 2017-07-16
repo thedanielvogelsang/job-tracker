@@ -8,7 +8,8 @@ RSpec.feature "User deletes existing job" do
     jobtitle = "Clean Toilets-4"
     job2title = "Clean Toilets-5"
     visit company_jobs_path(job.company)
-    
+    save_and_open_page
+
     expect(first("//li").text).to have_text(jobtitle)
     expect(page).to have_content(job2title)
     click_on("delete", :match => :first)
